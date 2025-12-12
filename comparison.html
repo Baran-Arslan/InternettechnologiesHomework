@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP vs TCP Comparison - Game Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">UDP vs TCP in Gaming</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="udp.html">UDP</a></li>
+                <li><a href="tcp.html">TCP</a></li>
+                <li><a href="comparison.html" class="active">Comparison</a></li>
+                <li><a href="usecases.html">Use Cases</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>UDP vs TCP: Detailed Comparison</h1>
+            <p>Understanding the Trade-offs for Game Development</p>
+        </section>
+
+        <section class="content">
+            <h2>Side-by-Side Comparison</h2>
+            <p>
+                This comprehensive comparison highlights the key differences between UDP and TCP 
+                protocols in the context of game development.
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>UDP</th>
+                        <th>TCP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Connection</strong></td>
+                        <td>Connectionless</td>
+                        <td>Connection-oriented</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reliability</strong></td>
+                        <td>Unreliable (best effort)</td>
+                        <td>Reliable (guaranteed delivery)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ordering</strong></td>
+                        <td>No ordering guarantee</td>
+                        <td>Ordered delivery</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Speed</strong></td>
+                        <td>Faster (lower latency)</td>
+                        <td>Slower (higher latency)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Header Size</strong></td>
+                        <td>8 bytes</td>
+                        <td>20-60 bytes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Error Checking</strong></td>
+                        <td>Basic checksum only</td>
+                        <td>Extensive error checking</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Retransmission</strong></td>
+                        <td>No automatic retransmission</td>
+                        <td>Automatic retransmission</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flow Control</strong></td>
+                        <td>None</td>
+                        <td>Yes (windowing)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Congestion Control</strong></td>
+                        <td>None</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Broadcasting</strong></td>
+                        <td>Supported</td>
+                        <td>Not supported</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bandwidth</strong></td>
+                        <td>Lower overhead</td>
+                        <td>Higher overhead</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use in Gaming</strong></td>
+                        <td>Real-time gameplay</td>
+                        <td>Critical data, chat, downloads</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="protocol-section">
+                <h3>Performance Comparison</h3>
+                <p>
+                    Understanding the performance characteristics is crucial for game developers:
+                </p>
+                <ul>
+                    <li><strong>Latency:</strong> UDP typically has 10-30ms lower latency than TCP in gaming scenarios</li>
+                    <li><strong>Throughput:</strong> TCP may achieve higher throughput for bulk transfers, but UDP is better for small, frequent updates</li>
+                    <li><strong>Packet Loss Tolerance:</strong> UDP handles 5-10% packet loss well in games, while TCP performance degrades significantly</li>
+                    <li><strong>Jitter:</strong> UDP provides more consistent timing, TCP can have variable delays due to retransmissions</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>The Head-of-Line Blocking Problem</h3>
+                <p>
+                    One of the most significant issues with TCP in real-time games is head-of-line blocking:
+                </p>
+                <ul>
+                    <li>When a packet is lost, TCP must retransmit it before delivering newer packets</li>
+                    <li>This means newer, more relevant game state updates are delayed</li>
+                    <li>In fast-paced games, this can cause rubber-banding and stuttering</li>
+                    <li>UDP doesn't have this problem - newer packets are processed immediately</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Hybrid Approaches</h3>
+                <p>
+                    Many modern games use both protocols strategically:
+                </p>
+                <ul>
+                    <li><strong>UDP for Gameplay:</strong> Player movements, projectile positions, real-time actions</li>
+                    <li><strong>TCP for Critical Data:</strong> Chat messages, inventory changes, quest updates</li>
+                    <li><strong>Custom Reliability:</strong> Implementing selective reliability over UDP for important events</li>
+                    <li><strong>Example:</strong> Overwatch uses UDP for gameplay but has custom reliability for critical events like eliminations</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Making the Right Choice</h3>
+                <p>
+                    Consider these factors when choosing a protocol:
+                </p>
+                <ul>
+                    <li><strong>Game Genre:</strong> FPS and racing need UDP; turn-based can use TCP</li>
+                    <li><strong>Network Conditions:</strong> UDP performs better on unreliable networks</li>
+                    <li><strong>Development Resources:</strong> TCP is simpler to implement initially</li>
+                    <li><strong>Player Experience:</strong> Responsiveness vs. consistency trade-off</li>
+                    <li><strong>Server Load:</strong> UDP scales better for large numbers of concurrent players</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Baran Arslan - Internet Technologies Homework - Student ID: 77801</p>
+    </footer>
+</body>
+</html>
