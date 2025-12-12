@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Cases - UDP vs TCP in Game Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">UDP vs TCP in Gaming</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="udp.html">UDP</a></li>
+                <li><a href="tcp.html">TCP</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="usecases.html" class="active">Use Cases</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Real-World Use Cases</h1>
+            <p>Practical Applications of UDP and TCP in Game Development</p>
+        </section>
+
+        <section class="content">
+            <h2>When to Use UDP</h2>
+            <p>
+                UDP is the preferred choice for scenarios where speed and low latency are paramount, 
+                and occasional data loss is acceptable.
+            </p>
+
+            <div class="protocol-section">
+                <h3>First-Person Shooter (FPS) Games</h3>
+                <p>
+                    <strong>Example: Counter-Strike, Valorant, Call of Duty</strong>
+                </p>
+                <ul>
+                    <li>Player position updates (sent 20-60 times per second)</li>
+                    <li>Weapon firing and hit detection</li>
+                    <li>Character animations and movements</li>
+                    <li>Real-time voice chat</li>
+                    <li>Critical: Every millisecond of latency affects aim and responsiveness</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Battle Royale Games</h3>
+                <p>
+                    <strong>Example: Fortnite, PUBG, Apex Legends</strong>
+                </p>
+                <ul>
+                    <li>Large number of players (50-100) in a single match</li>
+                    <li>Continuous world state updates</li>
+                    <li>Vehicle physics and movement</li>
+                    <li>Environmental changes (building destruction, storm circle)</li>
+                    <li>UDP handles the massive amount of data efficiently</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Racing Games</h3>
+                <p>
+                    <strong>Example: Forza Horizon, Gran Turismo Online</strong>
+                </p>
+                <ul>
+                    <li>Vehicle positions updated at high frequency</li>
+                    <li>Physics simulation synchronization</li>
+                    <li>Collision detection between players</li>
+                    <li>Speed and precision are critical for realistic racing</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Sports Games</h3>
+                <p>
+                    <strong>Example: FIFA, NBA 2K, Rocket League</strong>
+                </p>
+                <ul>
+                    <li>Player and ball position tracking</li>
+                    <li>Real-time physics for sports simulation</li>
+                    <li>Quick reactions and low input lag essential</li>
+                    <li>Smooth gameplay experience required</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 3rem;">When to Use TCP</h2>
+            <p>
+                TCP is ideal when data integrity and reliability are more important than speed, 
+                or when the game can tolerate higher latency.
+            </p>
+
+            <div class="protocol-section">
+                <h3>Turn-Based Strategy Games</h3>
+                <p>
+                    <strong>Example: Civilization, XCOM, Chess</strong>
+                </p>
+                <ul>
+                    <li>Player moves must be received accurately</li>
+                    <li>Game state synchronization critical</li>
+                    <li>No real-time constraints on actions</li>
+                    <li>Missing a move would break the game</li>
+                    <li>TCP ensures every action is received in order</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Card and Board Games</h3>
+                <p>
+                    <strong>Example: Hearthstone, Magic: The Gathering Arena</strong>
+                </p>
+                <ul>
+                    <li>Card draws and plays must be guaranteed</li>
+                    <li>Turn order must be maintained</li>
+                    <li>Game rules depend on ordered, reliable delivery</li>
+                    <li>Player actions are discrete and infrequent</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>In-Game Systems (Any Game)</h3>
+                <p>
+                    <strong>Used alongside UDP for gameplay</strong>
+                </p>
+                <ul>
+                    <li><strong>Chat Systems:</strong> Messages must arrive intact and in order</li>
+                    <li><strong>Authentication:</strong> Login credentials require reliable transmission</li>
+                    <li><strong>Inventory Management:</strong> Item transfers must be guaranteed</li>
+                    <li><strong>Trading Systems:</strong> Transactions must complete reliably</li>
+                    <li><strong>Leaderboards:</strong> Score updates need to be accurate</li>
+                    <li><strong>Friend Lists:</strong> Social features require reliability</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>File Transfers and Downloads</h3>
+                <p>
+                    <strong>Game Assets and Updates</strong>
+                </p>
+                <ul>
+                    <li>Downloading maps and game levels</li>
+                    <li>Texture and asset streaming</li>
+                    <li>Game patches and updates</li>
+                    <li>DLC content delivery</li>
+                    <li>Corrupted files would break the game</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 3rem;">Hybrid Approaches</h2>
+            
+            <div class="protocol-section">
+                <h3>MMORPGs (Massive Multiplayer Online RPGs)</h3>
+                <p>
+                    <strong>Example: World of Warcraft, Final Fantasy XIV</strong>
+                </p>
+                <ul>
+                    <li><strong>TCP for:</strong> Authentication, chat, quest data, inventory, trading</li>
+                    <li><strong>UDP for:</strong> Player movement, combat actions, world updates</li>
+                    <li><strong>Custom Protocols:</strong> Some use proprietary protocols over UDP with selective reliability</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>MOBA Games</h3>
+                <p>
+                    <strong>Example: League of Legends, Dota 2</strong>
+                </p>
+                <ul>
+                    <li><strong>UDP for:</strong> Character movement, ability usage, minion updates</li>
+                    <li><strong>TCP for:</strong> Match setup, champion selection, post-game statistics</li>
+                    <li>Balance between responsiveness and reliability</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Best Practices</h3>
+                <ul>
+                    <li>Use UDP for time-sensitive, frequently updated data</li>
+                    <li>Use TCP for critical, infrequent data that must arrive</li>
+                    <li>Consider implementing custom reliability over UDP for important events</li>
+                    <li>Profile your game to understand actual network requirements</li>
+                    <li>Test on various network conditions (latency, packet loss)</li>
+                    <li>Implement client-side prediction and lag compensation</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Baran Arslan - Internet Technologies Homework - Student ID: 77801</p>
+    </footer>
+</body>
+</html>

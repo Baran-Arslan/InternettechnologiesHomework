@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP Protocol - UDP vs TCP in Game Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">UDP vs TCP in Gaming</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="udp.html">UDP</a></li>
+                <li><a href="tcp.html" class="active">TCP</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="usecases.html">Use Cases</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Transmission Control Protocol (TCP)</h1>
+            <p>Reliable, Ordered, and Connection-Oriented</p>
+        </section>
+
+        <section class="content">
+            <h2>What is TCP?</h2>
+            <p>
+                TCP (Transmission Control Protocol) is a connection-oriented protocol that provides 
+                reliable, ordered delivery of data between applications. It establishes a connection 
+                before transmitting data and ensures that all packets arrive correctly.
+            </p>
+
+            <div class="protocol-section">
+                <h3>Key Characteristics of TCP</h3>
+                <ul>
+                    <li><strong>Connection-Oriented:</strong> Establishes a connection using a three-way handshake</li>
+                    <li><strong>Reliable:</strong> Guarantees delivery of all packets in the correct order</li>
+                    <li><strong>Error Checking:</strong> Detects and retransmits corrupted or lost packets</li>
+                    <li><strong>Flow Control:</strong> Manages data transmission rate between sender and receiver</li>
+                    <li><strong>Congestion Control:</strong> Adjusts transmission rate based on network conditions</li>
+                    <li><strong>Ordered Delivery:</strong> Ensures packets arrive in the same order they were sent</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>How TCP Works</h3>
+                <p>
+                    TCP follows a structured approach to ensure reliable data delivery:
+                </p>
+                <ul>
+                    <li><strong>Connection Establishment:</strong> Three-way handshake (SYN, SYN-ACK, ACK)</li>
+                    <li><strong>Data Transmission:</strong> Segments data and assigns sequence numbers</li>
+                    <li><strong>Acknowledgment:</strong> Receiver confirms receipt of each packet</li>
+                    <li><strong>Retransmission:</strong> Resends lost or corrupted packets</li>
+                    <li><strong>Connection Termination:</strong> Four-way handshake to close connection gracefully</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Advantages in Game Development</h3>
+                <ul>
+                    <li><strong>Guaranteed Delivery:</strong> Critical game data always arrives</li>
+                    <li><strong>Data Integrity:</strong> Perfect for transferring game assets, chat messages, and transactions</li>
+                    <li><strong>Simplified Development:</strong> No need to implement reliability mechanisms</li>
+                    <li><strong>Automatic Error Recovery:</strong> Built-in retransmission handles packet loss</li>
+                    <li><strong>Ordered Processing:</strong> Commands and events processed in correct sequence</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li><strong>Higher Latency:</strong> Handshakes and acknowledgments add delay</li>
+                    <li><strong>Head-of-Line Blocking:</strong> Lost packet blocks all subsequent packets</li>
+                    <li><strong>Overhead:</strong> Larger headers and more network traffic</li>
+                    <li><strong>Resource Intensive:</strong> Requires more CPU and memory per connection</li>
+                    <li><strong>Less Scalable:</strong> Connection state management limits concurrent connections</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>TCP in Game Development</h3>
+                <p>
+                    TCP is commonly used for specific aspects of multiplayer games:
+                </p>
+                <ul>
+                    <li><strong>Turn-Based Games:</strong> Chess, card games, strategy games where timing isn't critical</li>
+                    <li><strong>Chat Systems:</strong> In-game messaging and communication</li>
+                    <li><strong>Asset Downloads:</strong> Downloading maps, textures, and game updates</li>
+                    <li><strong>Authentication:</strong> Login systems and account management</li>
+                    <li><strong>Transactions:</strong> In-game purchases and inventory management</li>
+                    <li><strong>MMO Login Servers:</strong> World of Warcraft, Final Fantasy XIV use TCP for authentication</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>When to Use TCP in Games</h3>
+                <p>
+                    Choose TCP when:
+                </p>
+                <ul>
+                    <li>Data integrity is more important than speed</li>
+                    <li>Every piece of information must arrive (e.g., transactions, inventory)</li>
+                    <li>The game is turn-based or has relaxed timing requirements</li>
+                    <li>Simplicity and development speed are priorities</li>
+                    <li>You're implementing non-gameplay features like chat or leaderboards</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Baran Arslan - Internet Technologies Homework - Student ID: 77801</p>
+    </footer>
+</body>
+</html>

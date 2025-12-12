@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - UDP vs TCP in Game Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">UDP vs TCP in Gaming</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="udp.html">UDP</a></li>
+                <li><a href="tcp.html">TCP</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="usecases.html">Use Cases</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Resources and Conclusion</h1>
+            <p>Further Learning and Summary</p>
+        </section>
+
+        <section class="content">
+            <h2>Summary</h2>
+            <p>
+                Understanding the differences between UDP and TCP is fundamental for game developers. 
+                The choice between these protocols can significantly impact player experience, 
+                network performance, and game responsiveness.
+            </p>
+
+            <div class="protocol-section">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li><strong>UDP:</strong> Fast, lightweight, perfect for real-time gameplay where speed matters more than reliability</li>
+                    <li><strong>TCP:</strong> Reliable, ordered, ideal for critical data and non-real-time communications</li>
+                    <li><strong>Hybrid:</strong> Most modern games use both protocols strategically</li>
+                    <li><strong>Game Type Matters:</strong> FPS and racing games need UDP; turn-based games can use TCP</li>
+                    <li><strong>Network Optimization:</strong> Understanding protocols helps optimize multiplayer performance</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Learning Resources</h3>
+                <h4>Books</h4>
+                <ul>
+                    <li>"Multiplayer Game Programming" by Joshua Glazer and Sanjay Madhav</li>
+                    <li>"Network Programming for Games" by Paul Pedriana</li>
+                    <li>"Computer Networking: A Top-Down Approach" by James Kurose and Keith Ross</li>
+                    <li>"Game Engine Architecture" by Jason Gregory (Chapter on Networking)</li>
+                </ul>
+
+                <h4>Online Articles and Tutorials</h4>
+                <ul>
+                    <li>Gaffer on Games - Networking for Game Programmers series</li>
+                    <li>Valve Developer Community - Source Multiplayer Networking</li>
+                    <li>Unity Documentation - Multiplayer Networking</li>
+                    <li>Unreal Engine Documentation - Networking and Multiplayer</li>
+                    <li>Gabriel Gambetta - Fast-Paced Multiplayer series</li>
+                </ul>
+
+                <h4>Video Resources</h4>
+                <ul>
+                    <li>GDC talks on game networking</li>
+                    <li>YouTube channels: Sebastian Lague, Brackeys (Unity Networking tutorials)</li>
+                    <li>Riot Games Engineering talks on League of Legends networking</li>
+                    <li>Blizzard Entertainment - Overwatch Gameplay Architecture presentations</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Networking Libraries and Frameworks</h3>
+                <h4>Popular Game Networking Libraries</h4>
+                <ul>
+                    <li><strong>ENet:</strong> Reliable UDP networking library used by many games</li>
+                    <li><strong>RakNet:</strong> Cross-platform networking engine (now open source)</li>
+                    <li><strong>Photon:</strong> Cloud-based multiplayer backend</li>
+                    <li><strong>Mirror:</strong> High-level networking library for Unity</li>
+                    <li><strong>Netcode for GameObjects:</strong> Unity's official networking solution</li>
+                    <li><strong>Steamworks P2P:</strong> Peer-to-peer networking via Steam</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Advanced Topics to Explore</h3>
+                <ul>
+                    <li><strong>Client-Side Prediction:</strong> Reducing perceived latency in multiplayer games</li>
+                    <li><strong>Server Reconciliation:</strong> Handling conflicts between client predictions and server state</li>
+                    <li><strong>Lag Compensation:</strong> Techniques like lag compensation and hit-scan</li>
+                    <li><strong>Interest Management:</strong> Optimizing what data to send to which clients</li>
+                    <li><strong>Network Compression:</strong> Reducing bandwidth usage</li>
+                    <li><strong>Cheat Prevention:</strong> Server-authoritative design and validation</li>
+                    <li><strong>NAT Traversal:</strong> Connecting players behind routers</li>
+                    <li><strong>Distributed Systems:</strong> Scaling game servers</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Industry Standards and Protocols</h3>
+                <ul>
+                    <li><strong>WebRTC:</strong> Real-time communication for browser-based games</li>
+                    <li><strong>WebSockets:</strong> Full-duplex communication over TCP</li>
+                    <li><strong>QUIC:</strong> Modern protocol combining TCP reliability with UDP speed</li>
+                    <li><strong>gRPC:</strong> High-performance RPC framework</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Practical Tips for Developers</h3>
+                <ul>
+                    <li>Always test on real network conditions, not just localhost</li>
+                    <li>Use network simulation tools to test packet loss and latency</li>
+                    <li>Profile your network code to identify bottlenecks</li>
+                    <li>Implement robust error handling and reconnection logic</li>
+                    <li>Consider mobile networks with high latency and packet loss</li>
+                    <li>Document your networking architecture for team members</li>
+                    <li>Plan for scalability from the beginning</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 3rem;">Conclusion</h2>
+            <p>
+                The choice between UDP and TCP in game development is not about which protocol is 
+                "better," but rather which is more appropriate for your specific use case. Modern 
+                multiplayer games often employ sophisticated hybrid approaches, using UDP for 
+                time-sensitive gameplay data and TCP for critical systems.
+            </p>
+            <p>
+                As a game developer, understanding these protocols and their trade-offs will enable 
+                you to make informed decisions that result in better player experiences. Whether 
+                you're building a fast-paced shooter or a strategic turn-based game, network protocol 
+                selection is a fundamental design decision that shapes how your game feels to play.
+            </p>
+            <p>
+                Continue learning about networking, experiment with different approaches, and always 
+                keep the player experience at the center of your technical decisions.
+            </p>
+        </section>
+
+        <section class="presentation-link">
+            <h2>View Our Presentation</h2>
+            <p>Check out the Reveal.js presentation for a quick visual overview of UDP vs TCP in game development.</p>
+            <a href="presentation.html" class="btn btn-large">View Presentation</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Baran Arslan - Internet Technologies Homework - Student ID: 77801</p>
+    </footer>
+</body>
+</html>

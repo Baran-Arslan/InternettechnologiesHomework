@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP Protocol - UDP vs TCP in Game Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">UDP vs TCP in Gaming</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="udp.html" class="active">UDP</a></li>
+                <li><a href="tcp.html">TCP</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="usecases.html">Use Cases</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>User Datagram Protocol (UDP)</h1>
+            <p>Fast, Lightweight, and Perfect for Real-Time Gaming</p>
+        </section>
+
+        <section class="content">
+            <h2>What is UDP?</h2>
+            <p>
+                UDP (User Datagram Protocol) is a connectionless protocol in the transport layer of the 
+                Internet Protocol suite. Unlike TCP, UDP does not establish a connection before sending data, 
+                making it faster but less reliable.
+            </p>
+
+            <div class="protocol-section">
+                <h3>Key Characteristics of UDP</h3>
+                <ul>
+                    <li><strong>Connectionless:</strong> No handshake process required before data transmission</li>
+                    <li><strong>Unreliable:</strong> No guarantee that packets will arrive or arrive in order</li>
+                    <li><strong>Fast:</strong> Minimal overhead results in lower latency</li>
+                    <li><strong>Lightweight:</strong> Smaller packet headers (8 bytes vs TCP's 20 bytes)</li>
+                    <li><strong>No Congestion Control:</strong> Sends data at any rate without checking network capacity</li>
+                    <li><strong>Broadcast Support:</strong> Can send to multiple recipients simultaneously</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>How UDP Works</h3>
+                <p>
+                    UDP follows a simple "fire and forget" approach:
+                </p>
+                <ul>
+                    <li>Application creates a datagram (packet)</li>
+                    <li>UDP adds a simple header with source/destination ports</li>
+                    <li>Datagram is sent to the network layer</li>
+                    <li>No acknowledgment is expected or waited for</li>
+                    <li>If a packet is lost, it's simply gone - no retransmission</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Advantages in Game Development</h3>
+                <ul>
+                    <li><strong>Low Latency:</strong> Critical for fast-paced games where every millisecond counts</li>
+                    <li><strong>Real-time Updates:</strong> Perfect for transmitting player positions and game state</li>
+                    <li><strong>Bandwidth Efficiency:</strong> Less overhead means more actual game data</li>
+                    <li><strong>Scalability:</strong> Can handle more simultaneous connections</li>
+                    <li><strong>Acceptable Packet Loss:</strong> In games, old position data becomes obsolete quickly</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li><strong>No Reliability Guarantee:</strong> Packets may be lost, duplicated, or arrive out of order</li>
+                    <li><strong>No Flow Control:</strong> Can overwhelm slower receivers</li>
+                    <li><strong>Application Complexity:</strong> Developers must handle packet loss and ordering</li>
+                    <li><strong>Security Concerns:</strong> More vulnerable to spoofing and DDoS attacks</li>
+                </ul>
+            </div>
+
+            <div class="protocol-section">
+                <h3>UDP in Popular Games</h3>
+                <p>
+                    Many successful multiplayer games use UDP for their core gameplay networking:
+                </p>
+                <ul>
+                    <li><strong>First-Person Shooters:</strong> Counter-Strike, Call of Duty, Valorant</li>
+                    <li><strong>Battle Royale Games:</strong> Fortnite, PUBG, Apex Legends</li>
+                    <li><strong>Racing Games:</strong> Forza, Gran Turismo online modes</li>
+                    <li><strong>Sports Games:</strong> FIFA, Rocket League</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Baran Arslan - Internet Technologies Homework - Student ID: 77801</p>
+    </footer>
+</body>
+</html>
